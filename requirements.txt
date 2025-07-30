@@ -1,0 +1,11 @@
+
+# payment_gateway/requirements.txt
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+python-jose[cryptography]
+passlib[bcrypt]
+python-dotenv
+pytest
+flake8

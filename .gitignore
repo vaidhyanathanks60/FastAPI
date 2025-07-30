@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.env
+*.db
+*.sqlite3
+.idea/
+.vscode/
+*.log
+*.pid
+*.egg-info/
+dist/
+build/
+.env*
+docker-volume/
+venv/
