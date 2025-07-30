@@ -6,17 +6,17 @@ from app.models.payment import Payment
 from app.utils.auth import hash_password
 
 def init_db():
-    print("🔄 Creating database tables...")
+    print("Creating database tables...")
     Base.metadata.create_all(bind=engine)
 
     db: Session = SessionLocal()
 
     # Check if users already exist
     if db.query(User).count() > 0:
-        print("✅ DB already initialized.")
+        print("DB already initialized.")
         return
 
-    print("👤 Inserting sample users...")
+    print("Inserting sample users...")
 
     user1 = User(
         email="merchant@example.com",
@@ -32,7 +32,7 @@ def init_db():
     db.add_all([user1, user2])
     db.commit()
 
-    print("💳 Creating sample payments...")
+    print("Creating sample payments...")
 
     payment1 = Payment(amount=500.0, status="success", user_id=1)
     payment2 = Payment(amount=250.0, status="pending", user_id=2)
@@ -40,7 +40,7 @@ def init_db():
     db.add_all([payment1, payment2])
     db.commit()
 
-    print("✅ Database initialized with sample data.")
+    print("Database initialized with sample data.")
 
 if __name__ == "__main__":
     init_db()
